@@ -1,0 +1,18 @@
+.header {
+  margin-bottom: 30px;
+  box-shadow: var(--input-box-outline) 2px 1px 0.5px 1px;
+  background: var(--secondary);
+  color: var(--text);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.header button{
+  color: var(--text);
+  font-weight: bold;
+}
