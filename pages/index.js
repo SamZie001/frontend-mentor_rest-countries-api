@@ -51,11 +51,9 @@ export default function Home() {
 
   const handleSearch = () => {
     if (searchKey) {
-      setIsLoading(true);
       setFilteredCountries(
         countries.filter((e) => e.name.toLowerCase().includes(searchKey))
       );
-      setIsLoading(false);
     }
   };
 
