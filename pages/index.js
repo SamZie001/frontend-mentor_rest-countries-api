@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 import Meta from "../components/Meta";
 import homeStyles from "../styles/Home.module.css";
 import Image from "next/image";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import useSWR from "swr";
 
@@ -17,10 +17,10 @@ export default function Home() {
 
   let { data, error, isLoading } = useSWR("api/staticdata", fetcher);
 
-  useEffect(()=> {
+  useEffect(() => {
     if (data) {
       data = JSON.parse(data);
-  
+
       const namesToFilter = [
         "Germany",
         "United States of America",
@@ -38,7 +38,7 @@ export default function Home() {
           )
         )
       );
-  
+
       setFilteredCountries(
         data.filter((country) =>
           namesToFilter.some((name) =>
@@ -47,7 +47,7 @@ export default function Home() {
         )
       );
     }
-  },[data])
+  }, [data]);
 
   const handleSearch = () => {
     if (searchKey) {
@@ -76,7 +76,9 @@ export default function Home() {
       <main className="container">
         <div className={homeStyles["search-and-filter"]}>
           <div className={homeStyles.search}>
-            <button onClick={handleSearch}><i className="fa-solid fa-magnifying-glass"></i></button>
+            <button onClick={handleSearch}>
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
             <input
               type="text"
               placeholder="Search for a country..."
@@ -101,10 +103,13 @@ export default function Home() {
             className={homeStyles.filter}
           >
             <p>
-              {filterOption === null ? "Filter by Region" : filterOption}<i className="fa-solid fa-caret-down"></i>
+              {filterOption === null ? "Filter by Region" : filterOption}
+              <i className="fa-solid fa-caret-down"></i>
             </p>
             {showFilterOptions && (
-              <ul className={homeStyles["slide-in-blurred-top"]}>
+              <ul
+                className={homeStyles["slide-in-blurred-top"]}
+              >
                 <li onClick={() => handleFilter()}>Clear Filter</li>
                 <li onClick={() => handleFilter("Africa")}>Africa</li>
                 <li onClick={() => handleFilter("America")}>America</li>

@@ -40,12 +40,13 @@ const CountryDetails = ({ country }) => {
         <div className={countryStyles.detail}>
           <h1>{country.name.common}</h1>
           <div className={countryStyles["country-data"]}>
-            <div>
+            <div className={countryStyles["section"]}>
               <p>
                 <strong>Native Name:</strong> {nativeName}
               </p>
               <p>
-                <strong>Population:</strong> {country.population.toLocaleString()}
+                <strong>Population:</strong>{" "}
+                {country.population.toLocaleString()}
               </p>
               <p>
                 <strong>Region:</strong> {country.region}
@@ -57,7 +58,7 @@ const CountryDetails = ({ country }) => {
                 <strong>Capital:</strong> {country.capital[0]}
               </p>
             </div>
-            <div>
+            <div className={countryStyles["section"]}>
               <p>
                 <strong>Top Level Domain:&nbsp;</strong>
                 {country.tld && country.tld[0]}

@@ -8,6 +8,7 @@
   --det-text-size: 15px;
   --container-width: 1100px;
   --input-box-outline: hsla(0, 0%, 52%, 0.2);
+  --mobile-container-width: 330px;
 }
 
 [data-theme="dark"] {
@@ -49,4 +50,10 @@ button,
 .container {
   width: var(--container-width);
   margin: 0 auto;
+}
+
+@media (max-width: 375px) {
+  .container{
+    width: var(--mobile-container-width);
+  }
 }

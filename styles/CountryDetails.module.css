@@ -49,16 +49,68 @@
   color: var(--text);
   margin-top: 30px;
   display: flex;
-  align-items: center;
+}
+.borders strong{
+  width: 33%;
 }
 .border-list {
   display: flex;
+  flex-wrap: wrap;
   margin-left: 12px;
 }
 .border-list p {
+  border-radius: 2px;
   background: var(--secondary);
   color: var(--text);
   margin-right: 6px;
+  margin-bottom: 6px;
   padding: 1px 10px;
   box-shadow: var(--input-box-outline) 2px 2px 8px 1px;
+}
+
+@media (max-width: 375px) {
+  .country-detail {
+    flex-direction: column;
+  }
+  .flag,
+  .detail {
+    width: 100%;
+    height: auto;
+  }
+  .flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .detail{
+    padding: 0;
+  }
+  .detail h1 {
+    color: var(--text);
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: calc(var(--det-text-size) * 1.5);
+  }
+  .country-data {
+    flex-direction: column;
+  }
+  .country-data .section{
+    margin-bottom: 30px;
+  }
+  .country-data strong {
+    color: var(--text);
+  }
+  .country-data p {
+    color: var(--text);
+  }
+  .borders{
+    flex-wrap: wrap;
+  }
+  .borders strong{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .border-list {
+    margin-left: 0;
+  }
 }
