@@ -57,3 +57,8 @@ button,
     width: var(--mobile-container-width);
   }
 }
+@media (max-width: 412px) {
+  .container{
+    width: var(--mobile-container-width);
+  }
+}
